@@ -1,6 +1,23 @@
-.next/
+# Dépendances
 node_modules/
+
+# Variables d'environnement, ne jamais commit ce fichier
 .env
-.env.local
-public/uploads/*
-!public/uploads/.gitkeep
+
+# Fichiers de build
+dist/
+build/
+
+# Images uploadées par les utilisateurs
+backend/uploads/*
+!backend/uploads/.gitkeep
+
+# Logs
+*.log
+npm-debug.log*
+
+# Éditeurs
+.vscode/
+.idea/
+*.swp
+.DS_Store

@@ -1,5 +1,4 @@
--- Script de création de la base de données
--- À importer avec : mysql -u root -p < database.sql
+
 
 CREATE DATABASE IF NOT EXISTS lama_zone CHARACTER SET utf8 COLLATE utf8_unicode_ci;
 

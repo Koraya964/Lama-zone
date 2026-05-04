@@ -264,13 +264,11 @@ const Accueil = () => {
 
   return (
     <div>
-      {/* ============================================================ */}
       {/* HERO                                                           */}
-      {/* ============================================================ */}
       <section className="relative -mx-4 sm:-mx-6 lg:-mx-8 mb-14">
         {/* Fond sombre avec texture de points */}
         <div
-          className="absolute inset-0 bg-gray-950"
+          className="absolute inset-0 bg-gray-900"
           style={{
             backgroundImage:
               "radial-gradient(rgba(255,255,255,0.07) 1px, transparent 1px)",
@@ -426,9 +424,7 @@ const Accueil = () => {
         </div>
       </section>
 
-      {/* ============================================================ */}
       {/* CATÉGORIES                                                     */}
-      {/* ============================================================ */}
       <section className="mb-14" aria-labelledby="titre-categories">
         <SectionTitre id="titre-categories" lien="/annonces">
           Toutes les catégories
@@ -454,10 +450,7 @@ const Accueil = () => {
           ))}
         </div>
       </section>
-
-      {/* ============================================================ */}
       {/* DERNIÈRES ANNONCES                                             */}
-      {/* ============================================================ */}
       <section className="mb-14" aria-labelledby="titre-annonces">
         <SectionTitre id="titre-annonces" lien="/annonces">
           Dernières annonces
@@ -501,71 +494,7 @@ const Accueil = () => {
         )}
       </section>
 
-      {/* ============================================================ */}
-      {/* COMMENT ÇA MARCHE                                              */}
-      {/* ============================================================ */}
-      <section
-        className="mb-14 bg-white rounded-2xl border border-gray-100 shadow-sm overflow-hidden"
-        aria-labelledby="titre-comment"
-      >
-        <div className="px-8 py-10">
-          <h2
-            id="titre-comment"
-            className="text-xl font-bold text-gray-900 text-center mb-10"
-          >
-            Comment ça marche ?
-          </h2>
-          <div className="grid grid-cols-1 sm:grid-cols-3 gap-8 relative">
-            {/* Ligne de connexion entre les étapes sur desktop */}
-            <div
-              className="hidden sm:block absolute top-7 left-[calc(16.66%+1rem)] right-[calc(16.66%+1rem)] h-px bg-gray-100"
-              aria-hidden="true"
-            />
-
-            {[
-              {
-                num: "1",
-                titre: "Créez votre annonce",
-                desc: "Photos, description et prix. Publié en moins de 2 minutes, gratuitement.",
-                couleur: "bg-orange-50 text-primary-500 border-orange-100",
-              },
-              {
-                num: "2",
-                titre: "Recevez des messages",
-                desc: "Les acheteurs vous contactent via la messagerie intégrée et sécurisée.",
-                couleur: "bg-blue-50 text-blue-500 border-blue-100",
-              },
-              {
-                num: "3",
-                titre: "Concluez la vente",
-                desc: "Organisez la rencontre à votre convenance et finalisez la transaction.",
-                couleur: "bg-emerald-50 text-emerald-500 border-emerald-100",
-              },
-            ].map(({ num, titre, desc, couleur }) => (
-              <div
-                key={num}
-                className="relative flex flex-col items-center text-center gap-4"
-              >
-                <div
-                  className={`w-14 h-14 rounded-2xl border ${couleur} flex items-center justify-center text-2xl font-black z-10 bg-white`}
-                >
-                  {num}
-                </div>
-                <div>
-                  <h3 className="font-bold text-gray-900 mb-1">{titre}</h3>
-                  <p className="text-sm text-gray-500 leading-relaxed">
-                    {desc}
-                  </p>
-                </div>
-              </div>
-            ))}
-          </div>
-        </div>
-      </section>
-
-      {/* ============================================================ */}
       {/* CTA FINAL                                                      */}
-      {/* ============================================================ */}
       <section
         className="relative overflow-hidden rounded-2xl mb-4 bg-gray-950"
         aria-labelledby="titre-cta"

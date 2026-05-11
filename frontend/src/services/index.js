@@ -1,4 +1,3 @@
-// On regroupe ici tous les appels API liés aux annonces
 import api from './api.js';
 
 export const annoncesService = {
@@ -15,9 +14,13 @@ export const annoncesService = {
     deleteImage: (annonceId, imageId) => api.delete(`/annonces/${annonceId}/images/${imageId}`),
 };
 
+// On retire le token du body des appels auth — il est maintenant géré par les cookies et les headers
 export const authService = {
     register: (data) => api.post('/auth/register', data),
     login: (data) => api.post('/auth/login', data),
+    // Ces deux méthodes sont maintenant appelées directement depuis le contexte
+    refresh: () => api.post('/auth/refresh'),
+    logout: () => api.post('/auth/logout'),
 };
 
 export const utilisateursService = {
@@ -26,7 +29,6 @@ export const utilisateursService = {
     updateProfil: (data) => api.put('/utilisateurs/profil', data),
     updatePassword: (data) => api.put('/utilisateurs/profil/password', data),
     deleteCompte: () => api.delete('/utilisateurs/profil'),
-    // On récupère les avis reçus par un vendeur donné
     getAvis: (vendeurId) => api.get(`/utilisateurs/${vendeurId}/avis`),
     envoyerAvis: (vendeurId, data) => api.post(`/utilisateurs/${vendeurId}/avis`, data),
     supprimerAvis: (vendeurId) => api.delete(`/utilisateurs/${vendeurId}/avis`),
